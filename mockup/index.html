@@ -1,0 +1,272 @@
+<!doctype html>
+<html class="h-full bg-zinc-900">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="text-white/30 h-fullg">
+  <div class="min-h-full">
+    <nav class="shadow-xl bg-green-800/80">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 text-white/80">
+              <svg class="w-8 h-8" fill=currentColor viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg">
+                <path d="m160-120v-480l320-240 320 240v480h-240v-280h-160v280z" />
+              </svg>
+
+            </div>
+            <div class="flex items-baseline ml-10 space-x-4">
+              <a href="#"
+                class="px-3 py-2 text-sm font-medium text-white rounded-md bg-gray-900/30 hover:bg-gray-900/40"
+                aria-current="page">Plants</a>
+            </div>
+          </div>
+          <div class="flex items-center ml-4 md:ml-6">
+            <button type="button"
+              class="relative p-1 text-gray-400 bg-gray-800 rounded-full opacity-50 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <main>
+    <header class="px-4 py-2 shadow-xl opacity-75 bg-zinc-800">
+      <h1 class="text-2xl">Active plants</h1>
+    </header>
+    <div class="py-6 mb-10 sm:px-6 lg:px-8">
+      <!-- Your content -->
+      <div class="flex flex-wrap mt-5 justify-left">
+
+        <!-- card 1 -->
+        <div class="p-4 w-1/1 md:w-1/2 lg:w-1/3">
+          <div class="flex flex-col pt-6 pr-7 pb-7 pl-6 h-full rounded-lg shadow-xl bg-blue-300/10">
+            <div class="flex items-center mb-3">
+              <div
+                class="inline-flex justify-center items-center mr-3 w-8 h-8 text-gray-300 rounded-full bg-blue-900/80">
+                <svg fill="currentColor" stroke="none" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960">
+                  <path
+                    d="M440-120v-319q-64 0-123-24.5T213-533q-45-45-69-104t-24-123v-80h80q63 0 122 24.5T426-746q31 31 51.5 68t31.5 79q5-7 11-13.5t13-13.5q45-45 104-69.5T760-720h80v80q0 64-24.5 123T746-413q-45 45-103.5 69T520-320v200h-80Z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold leading-6 text-white/40 font-stretch-condensed">
+                  Heirloom tomatoes #1
+                </h2>
+                <div class="mt-0.5 text-sm italic font-semibold text-white/70">4 days</div>
+              </div>
+            </div>
+            <div class="flex flex-row mt-3 ml-2">
+              <p class="text-sm leading-tight"><strong>Started:</strong><br />January 1, 2023</p>
+              <a href="#"
+                class="inline-flex items-center px-6 py-1 mt-1 ml-auto text-white bg-green-700 rounded-full shadow-lg hover:bg-green-800">
+                View
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="ml-2 w-4 h-4" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /card 1 -->
+
+        <!-- card 2 -->
+        <div class="p-4 w-1/1 md:w-1/2 lg:w-1/3">
+          <div class="flex flex-col pt-6 pr-7 pb-7 pl-6 h-full rounded-lg shadow-xl bg-green-300/10">
+            <div class="flex items-center mb-3">
+              <div
+                class="inline-flex justify-center items-center mr-3 w-8 h-8 text-gray-300 rounded-full bg-green-800/80">
+                <svg fill="currentColor" stroke="none" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960">
+                  <path
+                    d="M450-80q-33 0-66.5-7.5T315-109q12-121 70-226t149-185q-110 56-190.5 148T231-162q-4-3-7.5-6.5L216-176q-47-47-71.5-105T120-402q0-68 27-130t75-110q81-81 210-105.5t362-4.5q18 239-6 364.5T684-182q-49 49-109.5 75.5T450-80Z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold leading-6 text-white/40 font-stretch-condensed">
+                  Heirloom tomatoes #2
+                </h2>
+                <div class="mt-0.5 text-sm italic font-semibold text-white/70">~2 weeks (16 days)</div>
+              </div>
+            </div>
+            <div class="flex flex-row mt-3 ml-2">
+              <p class="text-sm leading-tight"><strong>Veg started:</strong><br />January 1, 2023</p>
+              <a href="#"
+                class="inline-flex items-center px-6 py-1 mt-1 ml-auto text-white bg-green-700 rounded-full shadow-lg hover:bg-green-800">
+                View
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="ml-2 w-4 h-4" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /card 2 -->
+
+        <!-- card 3 -->
+        <div class="p-4 w-1/1 md:w-1/2 lg:w-1/3">
+          <div class="flex flex-col pt-6 pr-7 pb-7 pl-6 h-full rounded-lg shadow-xl bg-purple-300/10">
+            <div class="flex items-center mb-3">
+              <div
+                class="inline-flex justify-center items-center mr-3 w-8 h-8 text-gray-300 rounded-full bg-purple-900/80">
+                <svg fill="currentColor" stroke="none" class="w-5 h-5" viewBox="0 -960 960 960"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m440-80q-100 0-170-70t-70-170v-80q71-1 134 29t106 81v-153q-86-14-143-80.5t-57-156.5v-136q0-26 23-36.5t43 6.5l74 64 69-84q12-14 31-14t31 14l69 84 74-64q20-17 43-6.5t23 36.5v136q0 90-57 156.5t-143 80.5v153q43-51 106-81t134-29v80q0 100-70 170t-170 70z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold leading-6 text-white/40 font-stretch-condensed">
+                  Romanesco broccoli #1
+                </h2>
+                <div class="mt-0.5 text-sm italic font-semibold text-white/70">~2 weeks (16 days)</div>
+              </div>
+            </div>
+            <div class="flex flex-row mt-3 ml-2">
+              <p class="text-sm leading-tight"><strong>Flower started:</strong><br /> January 1, 2023</p>
+              <a href="#"
+                class="inline-flex items-center px-6 py-1 mt-1 ml-auto text-white bg-green-700 rounded-full shadow-lg hover:bg-green-800">
+                View
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="ml-2 w-4 h-4" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /card 3 -->
+
+        <!-- card 4 -->
+        <div class="p-4 w-1/1 md:w-1/2 lg:w-1/3">
+          <div class="flex flex-col pt-6 pr-7 pb-7 pl-6 h-full rounded-lg shadow-xl bg-red-300/10">
+            <div class="flex items-center mb-3">
+              <div
+                class="inline-flex justify-center items-center mr-3 w-8 h-8 text-gray-300 rounded-full bg-red-900/80">
+                <svg fill="currentColor" stroke="none" class="w-5 h-5" viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m296.625 25.406c-63.794.388-135.81 14.683-206.03 32.844-3.472 34.08 2.226 68.906 14.03 104.25 76.55-86.564 289.025-117.675 382.095-34.5-30.7-77.534-102.674-103.126-190.096-102.594zm-230.97 36.032-37.749 9.562c5.643 78.022 28.546 132.393 60.44 174.47-16.54 10.348-40.693 19.673-68.782 26.843 5.664 6.597 14.25 16.18 30.53 18.53 24.846-4.33 39.912-14.982 53.75-26.593 76.24 85.145 190.22 118.955 253.126 224.22l49.436-.126c-115.41-213.028-325.396-123.54-340.75-426.906z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold leading-6 text-white/40 font-stretch-condensed">
+                  Romanesco broccoli #2
+                </h2>
+                <div class="mt-0.5 text-sm italic font-semibold text-white/70">4 days</div>
+              </div>
+            </div>
+            <div class="flex flex-row mt-3 ml-2">
+              <p class="text-sm leading-tight"><strong>Harvested:</strong><br /> January 1, 2023</p>
+              <a href="#"
+                class="inline-flex items-center px-6 py-1 mt-1 ml-auto text-white bg-green-700 rounded-full shadow-lg hover:bg-green-800">
+                View
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="ml-2 w-4 h-4" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /card 4 -->
+
+        <!-- card 5 -->
+        <div class="p-4 w-1/1 md:w-1/2 lg:w-1/3">
+          <div class="flex flex-col pt-6 pr-7 pb-7 pl-6 h-full rounded-lg shadow-xl bg-yellow-300/10">
+            <div class="flex items-center mb-3">
+              <div
+                class="inline-flex justify-center items-center mr-3 w-8 h-8 text-gray-300 rounded-full bg-yellow-800/80">
+                <svg fill="currentColor" stroke="none" class="w-5 h-5" height="800" viewBox="0 0 382.421 382.422"
+                  width="800" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m297.209 80.934v-29.574h-213.862v28.365c-22.312 14.323-33.62 37.431-33.62 68.758v145.688c0 58.56 40.534 88.251 120.473 88.251h42.023c79.936 0 120.472-29.691 120.472-88.251v-145.689c0-30.224-11.935-52.922-35.486-67.548zm18.676 213.241c0 48.076-33.905 71.442-103.662 71.442h-42.023c-69.757 0-103.662-23.366-103.662-71.442v-145.686c0-27.115 9.588-45.651 29.311-56.667l4.309-2.405v-21.247h180.242v22.569l4.371 2.394c20.937 11.453 31.114 29.558 31.114 55.35zm-237.787-266.859v-16.109c0-6.186 5.02-11.207 11.206-11.207h203.819c6.187 0 11.206 5.021 11.206 11.207v16.109c0 6.187-5.02 11.207-11.206 11.207h-203.819c-6.191-.001-11.206-5.021-11.206-11.207zm-.354 150.275h226.936v91.051h-226.936z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold leading-6 text-white/40 font-stretch-condensed">
+                  Romanesco broccoli #2
+                </h2>
+                <div class="mt-0.5 text-sm italic font-semibold text-white/70">4 days</div>
+              </div>
+            </div>
+            <div class="flex flex-row mt-3 ml-2">
+              <p class="text-sm leading-tight"><strong>In storage since:</strong><br /> January 1, 2023</p>
+              <a href="#"
+                class="inline-flex items-center px-6 py-1 mt-1 ml-auto text-white bg-green-700 rounded-full shadow-lg hover:bg-green-800">
+                View
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="ml-2 w-4 h-4" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /card 5 -->
+      </div>
+    </div>
+
+    <header class="px-4 py-2 shadow-xl opacity-75 bg-zinc-800">
+      <h1 class="text-2xl">Archived plants</h1>
+    </header>
+    <div class="py-6 mb-10 max-w-7xl auto mb- sm:px-6 lg:px-8">
+      <!-- Your content -->
+      <div class="flex flex-wrap mt-5 justify-left">
+
+        <!-- card 1 -->
+        <div class="p-4 w-1/1 md:w-1/2 lg:w-1/3">
+          <div class="flex flex-col pt-6 pr-7 pb-7 pl-6 h-full rounded-lg shadow-xl bg-gray-300/10">
+            <div class="flex items-center mb-3">
+              <div
+                class="inline-flex justify-center items-center mr-3 w-8 h-8 text-gray-300 rounded-full bg-zinc-900/80">
+                <svg fill="currentColor" stroke="none" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" height="24px"
+                  viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                  <path
+                    d="M200-80q-33 0-56.5-23.5T120-160v-451q-18-11-29-28.5T80-680v-120q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v120q0 23-11 40.5T840-611v451q0 33-23.5 56.5T760-80H200Zm-40-600h640v-120H160v120Zm200 280h240v-80H360v80Z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-xl font-extrabold leading-6 text-gray-400">
+                  Snap peas
+                </h2>
+                <div class="mt-0.5 text-sm italic font-semibold text-gray-200">4 days</div>
+              </div>
+            </div>
+            <div class="flex flex-row mt-3 ml-2">
+              <p class="text-sm leading-tight"><strong>Started:</strong><br /> January 1, 2023</p>
+              <a href="#"
+                class="inline-flex items-center px-6 py-1 ml-auto text-white bg-green-700 rounded-full shadow-lg hover:bg-green-800">
+                View
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="ml-2 w-4 h-4" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /card 1 -->
+      </div>
+    </div>
+  </main>
+  </div>
+</body>
+
+</html>
