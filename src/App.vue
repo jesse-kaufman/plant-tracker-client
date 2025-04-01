@@ -1,7 +1,7 @@
-<script setup>
-import NavBar from "@/components/NavBar/index.vue"
-</script>
-
 <template>
   <NavBar />
 </template>
+
+<script setup>
+import NavBar from "@/components/Layout/NavBar.vue"
+</script>
