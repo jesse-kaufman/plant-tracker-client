@@ -29,5 +29,5 @@ export const getDaysBetween = (startedOn, endedOn = new Date()) => {
  * @param {Date} endedOn - End date.
  * @returns {number} Number of weeks between dates.
  */
-export const getWeeksBetween = (startedOn, endedOn = new Date()) =>
-  Math.floor(getDaysBetween(startedOn, endedOn) / 7)
+export const getWeekNumber = (startedOn, endedOn = new Date()) =>
+  Math.floor(getDaysBetween(startedOn, endedOn) / 7) + 1

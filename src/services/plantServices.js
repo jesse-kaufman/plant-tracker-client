@@ -1,6 +1,6 @@
 /** @file Plant services. */
 
-import { getWeeksBetween, getDaysBetween } from "./dateServices.js"
+import { getWeekNumber, getDaysBetween } from "./dateServices.js"
 
 /**
  * Gets starting date for stage provided.
@@ -23,7 +23,7 @@ export const getStageStartDate = (stage, dates) => {
  */
 export const getStageDuration = (stage, startedOn, endedOn = new Date()) => {
   const daysInStage = getDaysBetween(startedOn, endedOn)
-  const weeksInStage = getWeeksBetween(startedOn, endedOn)
+  const weeksInStage = getWeekNumber(startedOn, endedOn)
 
   let duration = `${daysInStage} days`
 
