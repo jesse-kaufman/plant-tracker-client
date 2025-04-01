@@ -16,9 +16,10 @@ export const getDaysBetween = (startedOn, endedOn = new Date()) => {
   // Throw error if startedOn is before endedOn.
   if (startedOn > endedOn) throw new Error("startedOn must be before endedOn")
 
+  // Calculate the difference in time (milliseconds).
   const timeDifference = endedOn - startedOn
 
-  // Convert milliseconds to days
+  // Convert milliseconds to days.
   return Math.floor(timeDifference / (1000 * 60 * 60 * 24))
 }
 
