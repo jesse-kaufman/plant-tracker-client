@@ -59,10 +59,7 @@ const config = [
       "vue/singleline-html-element-content-newline": 0,
       "vue/html-self-closing": "off",
       "vue/max-attributes-per-line": "off",
-      //...eslintConfigPrettier.rules, // Disable conflicting ESLint rules
       "prettier/prettier": "error", // Run Prettier as an ESLint rule
-
-      // ...jest.configs.recommended.rules,
       "array-callback-return": "error",
       "arrow-body-style": [
         "warn",
