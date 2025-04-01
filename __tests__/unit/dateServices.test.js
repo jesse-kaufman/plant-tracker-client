@@ -37,6 +37,12 @@ describe("Date service", () => {
       expect(result).toBe(expectedDays)
     })
 
+    it("should throw an error when startedOn is before endedOn", () => {
+      expect(() => {
+        getWeekNumber(new Date("2023-01-02"), new Date("2023-01-01"))
+      }).toThrow()
+    })
+
     it("should throw an error when non-dates are sent", () => {
       expect(() => {
         getDaysBetween(true)
@@ -74,6 +80,14 @@ describe("Date service", () => {
       expect(result).toBe(expectedDays)
     })
 
+    // Test when startedOn is before endedOn.
+    it("should throw an error when startedOn is before endedOn", () => {
+      expect(() => {
+        getWeekNumber(new Date("2023-01-02"), new Date("2023-01-01"))
+      }).toThrow()
+    })
+
+    // Test when non-dates are sent.
     it("should throw an error when non-dates are sent", () => {
       expect(() => {
         getWeekNumber(true, true)
