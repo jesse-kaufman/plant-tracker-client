@@ -9,9 +9,10 @@ import { getWeekNumber, getDaysBetween } from "./dateServices.js"
  * @returns {Date} Date stage was started.
  */
 export const getStageStartDate = (stage, dates) => {
+  if (stage === "seedling") return dates.startedOn
   if (stage === "harvested") return dates.harvestedOn
 
-  return dates[stage]
+  return dates[`${stage}StartedOn`]
 }
 
 /**
