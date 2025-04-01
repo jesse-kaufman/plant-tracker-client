@@ -7,7 +7,15 @@
  * @returns {number} Number of days between dates.
  */
 export const getDaysBetween = (startedOn, endedOn = new Date()) => {
-  // Calculate the difference in time (milliseconds)
+  // Throw error if startedOn is not a date.
+  if (!(startedOn instanceof Date)) {
+    throw new TypeError("startedOn must be a date")
+  }
+  // Throw error if endedOn is not a date.
+  if (!(endedOn instanceof Date)) throw new TypeError("endedOn must be a date")
+  // Throw error if startedOn is before endedOn.
+  if (startedOn > endedOn) throw new Error("startedOn must be before endedOn")
+
   const timeDifference = endedOn - startedOn
 
   // Convert milliseconds to days
