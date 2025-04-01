@@ -8,7 +8,7 @@ import { getDaysBetween, getWeekNumber } from "../../src/services/dateServices"
 describe("Date service", () => {
   // Test getDaysBetween() function.
   describe("getDaysBetween", () => {
-    it("should calculate the days between dates correctly", () => {
+    it("should calculate days between dates correctly", () => {
       // Test for 2 day increment.
       expect(
         getDaysBetween(new Date("2023-01-01"), new Date("2023-01-03"))
