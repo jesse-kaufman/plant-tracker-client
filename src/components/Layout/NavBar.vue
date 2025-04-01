@@ -5,10 +5,7 @@
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center">
             <Home />
-            <NavBarItem
-              name="Plants"
-              url="/"
-            />
+            <NavBarItem name="Plants" url="/" />
           </div>
           <Notifications />
         </div>
