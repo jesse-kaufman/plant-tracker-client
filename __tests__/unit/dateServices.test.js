@@ -3,10 +3,7 @@
 /* eslint-disable max-lines-per-function */
 
 import { describe, expect, it } from "vitest"
-import {
-  getDaysBetween,
-  getWeeksBetween as getWeekNumber,
-} from "../../src/services/dateServices"
+import { getDaysBetween, getWeekNumber } from "../../src/services/dateServices"
 
 describe("Date service", () => {
   // Test getDaysBetween() function.
@@ -23,15 +20,15 @@ describe("Date service", () => {
       ).toBe(6)
     })
 
-    it("should calculate the correct number of days when endDate is not passed", () => {
-      const startDate = new Date("2023-01-01")
+    it("should calculate days between dates correctly when endedOn is not passed", () => {
+      const startedOn = new Date("2023-01-01")
       const today = new Date()
 
       // Calculate the expected difference in days
-      const expectedDays = Math.floor((today - startDate) / (1000 * 3600 * 24))
+      const expectedDays = Math.floor((today - startedOn) / (1000 * 3600 * 24))
 
       // Run the function
-      const result = getDaysBetween(startDate)
+      const result = getDaysBetween(startedOn)
 
       // Assert the result is correct
       expect(result).toBe(expectedDays)
@@ -55,7 +52,8 @@ describe("Date service", () => {
 
   // Test getWeekNumber() function.
   describe("getWeekNumber", () => {
-    it("should calculate the weeks between dates correctly", () => {
+    // Test when startedOn and endedOn are both set.
+    it("should calculate week number correctly", () => {
       expect(
         getWeekNumber(new Date("2023-01-01"), new Date("2023-01-03"))
       ).toBe(1)
@@ -65,16 +63,17 @@ describe("Date service", () => {
       ).toBe(2)
     })
 
-    it("should calculate the correct number of weeks when endDate is not passed", () => {
-      const startDate = new Date("2023-01-01")
+    // Test when endedOn is not set.
+    it("should calculate week number correctly when endedOn is not passed", () => {
+      const startedOn = new Date("2023-01-01")
       const today = new Date()
       // Calculate the expected difference in days
       const expectedDays = Math.ceil(
-        Math.ceil((today - startDate) / (1000 * 3600 * 24)) / 7
+        Math.ceil((today - startedOn) / (1000 * 3600 * 24)) / 7
       )
 
       // Run the function being tested
-      const result = getWeekNumber(startDate)
+      const result = getWeekNumber(startedOn)
 
       // Assert the result is correct
       expect(result).toBe(expectedDays)
