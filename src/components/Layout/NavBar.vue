@@ -16,6 +16,6 @@
 
 <script setup>
 import NavBarItem from "./NavBarItem.vue"
-import Home from "./Home.vue"
-import Notifications from "./Notifications.vue"
+import Home from "./NavBarHome.vue"
+import Notifications from "./NavBarNotifications.vue"
 </script>
