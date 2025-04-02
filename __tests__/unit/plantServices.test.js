@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest"
 import {
   getStageStartDate,
   getStageDuration,
+  getStageName,
 } from "@/services/plantServices.js"
 
 const dates = {
@@ -15,6 +16,15 @@ const dates = {
 }
 
 describe("Plant service", () => {
+  describe("getStageName", () => {
+    it("should return 'vegetative' for 'veg' stage", () => {
+      expect(getStageName("veg")).toBe("vegetative")
+    })
+    it("should return 'storage' for 'cure' stage", () => {
+      expect(getStageName("cure")).toBe("storage")
+    })
+  })
+
   describe("getStageStartDate", () => {
     it("should get the stage start date correctly", () => {
       // Test getting startedOn date.
