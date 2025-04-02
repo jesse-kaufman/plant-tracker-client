@@ -72,7 +72,7 @@ describe("Plant service", () => {
       // Test a longer duration in veg.
       expect(
         getStageDuration("veg", new Date("2023-01-01"), new Date("2023-03-12"))
-      ).toBe("Week 11 (70 days) in veg stage.")
+      ).toBe("Week 11 (70 days) in vegetative stage.")
 
       // Test a longer duration.
       expect(
