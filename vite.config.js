@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from "node:url"
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import vueDevTools from "vite-plugin-vue-devtools"
+// eslint-disable-next-line import/no-unresolved
 import tailwindcss from "@tailwindcss/vite"
 import svgLoader from "vite-svg-loader"
 
