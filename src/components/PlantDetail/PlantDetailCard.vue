@@ -37,12 +37,3 @@ const plant = {
 const { startedOn, vegStartedOn } = plant
 const dates = { startedOn, vegStartedOn }
 </script>
-
-<style>
-.plant-detail-card {
-  @apply flex flex-col flex-grow py-9 pr-3 pl-6 w-full rounded-2xl shadow-xl lg:w-2/3 md:pl-8 md:pr-8 md:py-12;
-}
-.plant-detail-card.veg {
-  @apply bg-green-300/10;
-}
-</style>
