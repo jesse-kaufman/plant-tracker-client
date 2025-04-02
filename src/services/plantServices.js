@@ -42,7 +42,7 @@ export const getStageDuration = (stage, startedOn, endedOn = new Date()) => {
   let duration = `${daysInStage} days`
 
   if (weeksInStage > 0) {
-    duration = `~${weeksInStage} weeks (${duration})`
+    duration = `Week ${weeksInStage} (${duration})`
   }
 
   const since = stage === "harvested" ? "since harvest" : `in ${stage} stage`
