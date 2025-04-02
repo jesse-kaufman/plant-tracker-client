@@ -3,6 +3,20 @@
 import { getWeekNumber, getDaysBetween } from "./dateServices.js"
 
 /**
+ * Translates stage to friendly name.
+ * @param {string} stage - Stage to translate.
+ * @returns {string} Friendly name.
+ */
+export const getStageName = (stage) => {
+  const stageNames = {
+    veg: "vegetative",
+    cure: "storage",
+  }
+
+  return stageNames[stage] || stage
+}
+
+/**
  * Gets starting date for stage provided.
  * @param {string} stage - Stage to get date for.
  * @param {object} dates - Object containing plant dates.
