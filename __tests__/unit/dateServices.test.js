@@ -45,7 +45,7 @@ describe("Date service", () => {
         getDaysBetween(true)
       }).toThrow()
       expect(() => {
-        getDaysBetween(true, true)
+        getDaysBetween(new Date("2023-01-02"), true)
       }).toThrow()
     })
   })
@@ -89,7 +89,7 @@ describe("Date service", () => {
     // Test when non-dates are sent.
     it("should throw an error when non-dates are sent", () => {
       expect(() => {
-        getWeekNumber(true, true)
+        getWeekNumber(new Date("2023-01-02"), true)
       }).toThrow()
       expect(() => {
         getWeekNumber(true)
