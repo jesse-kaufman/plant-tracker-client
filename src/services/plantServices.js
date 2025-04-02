@@ -9,10 +9,23 @@ import { getWeekNumber, getDaysBetween } from "./dateServices.js"
  * @returns {Date} Date stage was started.
  */
 export const getStageStartDate = (stage, dates) => {
-  if (stage === "seedling") return dates.startedOn
-  if (stage === "harvested") return dates.harvestedOn
+  // Validate input.
+  if (!dates || typeof dates !== "object") {
+    throw new Error("Invalid dates object")
+  }
 
-  return dates[`${stage}StartedOn`]
+  // Initialize dateProp to default.
+  let dateProp = `${stage}StartedOn`
+
+  // Override date prop for seedling and harvested stages.
+  if (stage === "seedling") dateProp = "startedOn"
+  if (stage === "harvested") dateProp = "harvestedOn"
+
+  // Throw error if property does not exist.
+  if (dates[dateProp] == null) throw new Error("Invalid dates object")
+
+  // Return the date.
+  return dates[dateProp]
 }
 
 /**
