@@ -10,15 +10,20 @@
         {{ name }}
       </h2>
       <div class="mt-1 text-lg italic font-semibold text-white/70">
-        {{ timeInStage }}
+        {{ stageDuration }}
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import {
+  getStageDuration,
+  getStageStartDate,
+} from "../../services/plantServices"
 import vegIcon from "@/assets/icons/veg.svg"
-defineProps({
+
+const props = defineProps({
   name: {
     type: String,
     required: true,
@@ -31,9 +36,8 @@ defineProps({
     type: Object,
     required: true,
   },
-  timeInStage: {
-    type: String,
-    required: true,
-  },
 })
+
+const startedOn = getStageStartDate(props.stage, props.dates)
+const stageDuration = getStageDuration(props.stage, startedOn)
 </script>

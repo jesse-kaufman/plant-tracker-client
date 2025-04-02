@@ -1,6 +1,6 @@
 <template>
   <div class="plant-detail-card bg-green-300/10">
-    <PlantDetailHeader
+    <PlantCardHeader
       :stage="plant.stage"
       :name="plant.name"
       :dates="dates"
@@ -19,9 +19,9 @@
 </template>
 
 <script setup>
+import PlantCardHeader from "../UI/PlantCardHeader.vue"
 import PlantProgressBar from "../UI/PlantProgressBar.vue"
 import PlantDetailDates from "./PlantDetailDates.vue"
-import PlantDetailHeader from "./PlantDetailHeader.vue"
 
 const plant = {
   id: 1,
