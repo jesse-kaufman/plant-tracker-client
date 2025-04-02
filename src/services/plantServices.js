@@ -51,14 +51,18 @@ export const getStageStartDate = (stage, dates) => {
  */
 export const getStageDuration = (stage, startedOn, endedOn = new Date()) => {
   const daysInStage = getDaysBetween(startedOn, endedOn)
-  const weeksInStage = getWeekNumber(startedOn, endedOn)
+  const weekNum = getWeekNumber(startedOn, endedOn)
 
   let duration = `${daysInStage} days`
 
-  if (weeksInStage > 0) {
-    duration = `Week ${weeksInStage} (${duration})`
+  // If week number > 0, add it to the string and put days in parentheses.
+  if (weekNum > 0) {
+    duration = `Week ${weekNum} (${duration})`
   }
 
-  const since = stage === "harvested" ? "since harvest" : `in ${stage} stage`
-  return `${duration} ${since}.`
+  // If stage is harvested, end with "since harvest" otherwise end with "in [stage] stage".
+  const stageLabel =
+    stage === "harvested" ? "since harvest" : `in ${getStageName(stage)} stage`
+
+  return `${duration} ${stageLabel}.`
 }
