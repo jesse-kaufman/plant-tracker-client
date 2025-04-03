@@ -45,6 +45,9 @@ describe("Date service", () => {
         getDaysBetween(true)
       }).toThrow()
       expect(() => {
+        getDaysBetween(true, true)
+      }).toThrow()
+      expect(() => {
         getDaysBetween(new Date("2023-01-02"), true)
       }).toThrow()
     })
