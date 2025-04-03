@@ -116,26 +116,26 @@ describe("Plant service", () => {
   })
 
   describe("getStageCompleteness", () => {
-    it("returns 'current' when currentStage equals compareStage", () => {
+    it("returns 'current' when stage equals plantStage", () => {
       expect(getStageCompleteness("veg", "veg")).toBe("current")
     })
 
-    it("returns 'complete' when compareStage is 'source-seed'", () => {
-      expect(getStageCompleteness("veg", "source-seed")).toBe("complete")
+    it("always returns 'complete' when stage is 'source-seed'", () => {
+      expect(getStageCompleteness("source-seed", "veg")).toBe("complete")
     })
 
-    it("returns 'complete' when compareStage is 'source-clone'", () => {
-      expect(getStageCompleteness("veg", "source-clone")).toBe("complete")
+    it("always returns 'complete' when stage is 'source-clone'", () => {
+      expect(getStageCompleteness("source-clone", "veg")).toBe("complete")
     })
 
-    it("returns 'complete' when compareStage is before currentStage", () => {
-      expect(getStageCompleteness("veg", "seedling")).toBe("complete")
-      expect(getStageCompleteness("flower", "veg")).toBe("complete")
+    it("returns 'complete' when stage is before plantStage", () => {
+      expect(getStageCompleteness("seedling", "veg")).toBe("complete")
+      expect(getStageCompleteness("veg", "flower")).toBe("complete")
     })
 
-    it("returns 'pending' when compareStage is after currentStage", () => {
-      expect(getStageCompleteness("veg", "flower")).toBe("pending")
-      expect(getStageCompleteness("veg", "harvested")).toBe("pending")
+    it("returns 'pending' when stage is after plantStage", () => {
+      expect(getStageCompleteness("flower", "veg")).toBe("pending")
+      expect(getStageCompleteness("harvested", "veg")).toBe("pending")
     })
   })
 })
