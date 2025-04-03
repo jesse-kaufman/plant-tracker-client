@@ -25,11 +25,11 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  stage: {
+  currentStage: {
     type: String,
     default: "current",
   },
 })
 
-const state = getStageCompleteness(props.id, props.stage)
+const state = getStageCompleteness(props.currentStage, props.id)
 </script>

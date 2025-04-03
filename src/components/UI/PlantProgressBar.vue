@@ -8,7 +8,7 @@
 
     <PlantProgressBarItem
       id="seedling"
-      :stage="stage"
+      :current-stage="stage"
       tooltip="Seedling stage"
     />
 
