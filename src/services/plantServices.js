@@ -104,3 +104,15 @@ export const getStageDuration = (stage, startedOn, endedOn = new Date()) => {
 
   return `${duration} ${stageLabel}.`
 }
+
+/**
+ * Generates a title for stage start (e.g., "Veg started on" or "Harvested on").
+ * @param {string} stage - Stage to generate a start title for.
+ * @returns {string} Title generated.
+ */
+export const getStageStartTitle = (stage) => {
+  if (stage === "seedling") return "Started"
+  if (stage === "harvested") return "Harvested"
+  if (stage === "cure") return "Storage"
+  return `${getStageName(stage)} stage`
+}
