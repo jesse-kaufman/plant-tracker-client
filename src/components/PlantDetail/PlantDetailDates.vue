@@ -21,6 +21,20 @@
         stage="flower"
         :plant-stage="currentStage"
       />
+      <PlantDetailDateItem
+        v-if="dates.harvestedOn"
+        title="Harvested on"
+        :date="dates.harvestedOn"
+        stage="harvested"
+        :plant-stage="currentStage"
+      />
+      <PlantDetailDateItem
+        v-if="dates.cureStartedOn"
+        title="In storage on"
+        :date="dates.cureStartedOn"
+        stage="cure"
+        :plant-stage="currentStage"
+      />
     </dl>
   </div>
 </template>
