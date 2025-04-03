@@ -6,6 +6,19 @@ import { getWeekNumber, getDaysBetween } from "./dateServices.js"
 const stageOrder = ["seedling", "veg", "flower", "harvested", "cure"]
 
 /**
+ * Gets object with stage dates from plant object.
+ * @param {object} plant - Plant object to extract dates from.
+ * @returns {object} - Dates object.
+ */
+export const getStageDates = (plant) => ({
+  startedOn: plant.startedOn,
+  vegStartedOn: plant.vegStartedOn,
+  flowerStartedOn: plant.flowerStartedOn,
+  harvestedOn: plant.harvestedOn,
+  cureStartedOn: plant.cureStartedOn,
+})
+
+/**
  * Gets stage completeness: pending, complete, or current.
  * @param {string} stage - Stage to retrieve completion level for.
  * @param {string} plantStage - Current plant stage for comparison.
