@@ -1,13 +1,16 @@
 /* eslint-disable max-lines-per-function */
 /** @file Plant service unit tests. */
-import { describe, expect, it } from "vitest"
+import { describe, expect, it, vi } from "vitest"
 import {
   getStageCompleteness,
   getStageDates,
   getStageDuration,
   getStageName,
   getStageStartDate,
+  getStageStartTitle,
 } from "@/services/plantServices.js"
+
+import * as plantServices from "@/services/plantServices.js"
 
 const dates = {
   startedOn: new Date("2023-01-01"),
@@ -136,6 +139,28 @@ describe("Plant service", () => {
     it("returns 'pending' when stage is after plantStage", () => {
       expect(getStageCompleteness("flower", "veg")).toBe("pending")
       expect(getStageCompleteness("harvested", "veg")).toBe("pending")
+    })
+  })
+
+  describe("getStageStartTitle", () => {
+    it('should return "Started" for "seedling" stage', () => {
+      expect(getStageStartTitle("seedling")).toBe("Started")
+    })
+
+    it('should return "Harvested" for "harvested" stage', () => {
+      expect(getStageStartTitle("harvested")).toBe("Harvested")
+    })
+
+    it('should return "Storage" for "cure" stage', () => {
+      expect(getStageStartTitle("cure")).toBe("Storage")
+    })
+
+    it("should return the correct stage name for other stages", () => {
+      const getStageNameMock = vi
+        .spyOn(plantServices, "getStageName")
+        .mockReturnValue("vegetative") // Mocking getStageName
+      expect(getStageStartTitle("veg")).toBe("vegetative stage")
+      getStageNameMock.mockRestore() // Restore the original implementation after the test
     })
   })
 })
