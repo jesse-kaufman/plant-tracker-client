@@ -11,10 +11,7 @@
 import { onMounted, reactive } from "vue"
 import PlantDetailCard from "@/components/PlantDetail/PlantDetailCard.vue"
 import PlantTimeline from "@/components/PlantDetail/PlantTimeline.vue"
-
 import plantData from "@/plant.json"
-
-console.log(plantData)
 
 const plant = reactive({
   ...plantData,
