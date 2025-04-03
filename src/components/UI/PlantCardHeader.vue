@@ -1,9 +1,7 @@
 <template>
   <div class="flex items-center mb-7">
-    <div
-      class="inline-flex justify-center items-center p-4 mr-3 w-16 h-16 text-gray-300 rounded-full shrink-0 bg-green-800/80"
-    >
-      <vegIcon v-if="stage === `veg`" />
+    <div class="plant-stage-icon">
+      <BaseIcon :icon="stage" />
     </div>
     <div>
       <h2 class="font-bold text-5xl/10 text-white/40 font-stretch-condensed">
@@ -17,11 +15,9 @@
 </template>
 
 <script setup>
-import {
-  getStageDuration,
-  getStageStartDate,
-} from "../../services/plantServices"
-import vegIcon from "@/assets/icons/veg.svg"
+import { computed } from "vue"
+import BaseIcon from "./BaseIcon.vue"
+import { getStageDuration } from "@/services/plantServices"
 
 const props = defineProps({
   name: {
@@ -32,12 +28,13 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  dates: {
-    type: Object,
+  stageStartedOn: {
+    type: Date,
     required: true,
   },
 })
 
-const startedOn = getStageStartDate(props.stage, props.dates)
-const stageDuration = getStageDuration(props.stage, startedOn)
+const stageDuration = computed(() =>
+  getStageDuration(props.stage, props.stageStartedOn)
+)
 </script>
