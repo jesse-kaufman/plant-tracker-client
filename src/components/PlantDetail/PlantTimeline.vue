@@ -16,23 +16,10 @@
 <script setup>
 import PlantTimelineItem from "./PlantTimelineItem.vue"
 
-const items = [
-  {
-    id: 1,
-    date: "January 1, 2023",
-    title: "Started from seed",
+defineProps({
+  items: {
+    type: Array,
+    required: true,
   },
-  {
-    id: 2,
-    date: "January 1, 2023",
-    title: "Moved to seedling stage",
-    details: "Spent 4 days sprouting.",
-  },
-  {
-    id: 3,
-    date: "January 1, 2023",
-    title: "Moved to vegetative stage",
-    details: "Spent 7 days in seedling stage.",
-  },
-]
+})
 </script>

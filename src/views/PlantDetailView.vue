@@ -2,7 +2,7 @@
   <div class="py-6 mb-10 sm:px-6 lg:px-8">
     <div class="flex flex-col p-4 lg:flex-row">
       <PlantDetailCard :plant="plant" />
-      <PlantTimeline />
+      <PlantTimeline :items="plant.timelineItems" />
     </div>
   </div>
 </template>
