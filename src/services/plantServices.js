@@ -31,7 +31,8 @@ export const getStageCompleteness = (stage, plantStage) => {
   if (
     plantStage === "source-seed" ||
     plantStage === "source-clone" ||
-    stageOrder.indexOf(stage) > stageOrder.indexOf(plantStage)
+    plantStage === "cure" ||
+    stageOrder.indexOf(stage) < stageOrder.indexOf(plantStage)
   ) {
     return "complete"
   }
