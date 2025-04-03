@@ -1,6 +1,6 @@
 <template>
-  <div v-if="show" class="opacity-30 flex flex-col py-3 last:opacity-100">
-    <dt class="leading-tight text-gray-400 text-xs uppercase">
+  <div v-if="show" class="flex flex-col py-3 opacity-30 last:opacity-100">
+    <dt class="text-xs leading-tight text-gray-400 uppercase">
       {{ getStageStartTitle(props.stage) }}
     </dt>
     <dd class="pl-1 text-lg font-semibold">

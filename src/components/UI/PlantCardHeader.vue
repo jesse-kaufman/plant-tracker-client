@@ -10,7 +10,7 @@
         {{ name }}
       </h2>
       <div
-        class="mt-1 sm:mt-2 leading-tight text-md sm:text-lg italic font-semibold text-white/70"
+        class="mt-1 italic font-semibold leading-tight sm:mt-2 text-md sm:text-lg text-white/70"
       >
         {{ stageDuration }}
       </div>
