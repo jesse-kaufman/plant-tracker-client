@@ -69,6 +69,32 @@
 }
 
 /*
+ * Plant stage icon.
+ */
+
+/* Base stage icon styles. */
+.plant-stage-icon {
+  @apply inline-flex justify-center items-center p-4 mr-3 w-16 h-16 text-gray-300 rounded-full shrink-0;
+}
+/* Stage icon background colors. */
+.plant-card.seedling .plant-stage-icon {
+  @apply bg-blue-900/80;
+}
+.plant-card.veg .plant-stage-icon {
+  @apply bg-green-800/80;
+}
+.plant-card.flower .plant-stage-icon {
+  @apply bg-purple-900/80;
+}
+.plant-card.harvested .plant-stage-icon {
+  @apply bg-red-900/80;
+}
+.plant-card.storage .plant-stage-icon,
+.plant-card.cure .plant-stage-icon {
+  @apply bg-yellow-800/80;
+}
+
+/*
  * Plant progress bar.
  */
 
@@ -93,8 +119,9 @@
   @apply after:border-zinc-900/30;
 }
 /* Hide line after last progress bar item. */
+.plant-progress-bar-item-complete:last-child,
 .plant-progress-bar-item-pending:last-child {
-  @apply after:border-none shrink w-auto;
+  @apply after:border-none shrink! w-auto;
 }
 
 /*
