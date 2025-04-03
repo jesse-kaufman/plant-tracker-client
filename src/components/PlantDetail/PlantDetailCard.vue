@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, reactive, toRefs } from "vue"
+import { computed, reactive, toRefs } from "vue"
 import PlantDetailDates from "./PlantDetailDates.vue"
 import PlantCardHeader from "@/components/UI/PlantCardHeader.vue"
 import PlantProgressBar from "@/components/UI/PlantProgressBar.vue"
