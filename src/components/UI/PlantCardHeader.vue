@@ -4,10 +4,14 @@
       <BaseIcon :icon="stage" />
     </div>
     <div>
-      <h2 class="font-bold text-5xl/10 text-white/40 font-stretch-condensed">
+      <h2
+        class="font-bold text-4xl/8 sm:text-5xl/9 text-white/40 font-stretch-condensed"
+      >
         {{ name }}
       </h2>
-      <div class="mt-1 text-lg italic font-semibold text-white/70">
+      <div
+        class="mt-1 sm:mt-2 leading-tight text-md sm:text-lg italic font-semibold text-white/70"
+      >
         {{ stageDuration }}
       </div>
     </div>
