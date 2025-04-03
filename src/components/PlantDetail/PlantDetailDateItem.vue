@@ -1,7 +1,7 @@
 <template>
   <div v-if="show" class="opacity-30 flex flex-col py-3 last:opacity-100">
-    <dt class="mb-1 text-gray-400 md:text-lg">{{ title }}</dt>
-    <dd class="text-lg font-semibold">
+    <dt class="leading-tight text-gray-400 text-xs uppercase">{{ title }}</dt>
+    <dd class="pl-1 text-lg font-semibold">
       {{
         date.toLocaleDateString("en-US", {
           weekday: "long",
