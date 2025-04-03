@@ -1,5 +1,5 @@
 <template>
-  <div class="plant-card plant-detail-card bg-green-300/10">
+  <div :class="`plant-card plant-detail-card ${plant.stage}`">
     <PlantCardHeader
       :stage="plant.stage"
       :name="plant.name"
