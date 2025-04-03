@@ -109,6 +109,8 @@
   @apply flex w-full items-center;
   /* Base styles for line between progress bar items. */
   @apply after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:inline-block;
+  /* Hide line after last progress bar item. */
+  @apply last:shrink last:w-auto last:after:border-none;
 }
 
 /*
@@ -136,10 +138,6 @@
 .plant-progress-bar-item-current,
 .plant-progress-bar-item-pending {
   @apply after:border-zinc-900/30;
-}
-/* Hide line after last progress bar item. */
-.plant-progress-bar-item.last {
-  @apply shrink w-auto after:border-none;
 }
 
 /*
