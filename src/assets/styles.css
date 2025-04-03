@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+/*
+ * Base plant card styles.
+ */
+
+/** Plant card title. */
+.plant-card > h2 {
+  @apply font-bold text-5xl/10 text-white/40 font-stretch-condensed;
+}
+
+/*
+ * Plant list styles.
+ */
+
+/** Plant list card title. */
+.plant-list .plant-card > h2 {
+  @apply text-2xl;
+}
+
+/*
+ * Plant detail styles.
+ */
+
+/** Plant detail card. */
+.plant-detail-card {
+  @apply flex flex-col flex-grow py-9 pr-3 pl-6 w-full rounded-2xl shadow-xl lg:w-2/3 md:pl-8 md:pr-8 md:py-12;
+}
+
+/*
+ * Plant card colors.
+ */
+.plant-card.veg {
+  @apply bg-green-300/10;
+}
+.plant-card.seedling {
+  @apply bg-blue-300/10;
+}
+.plant-card.flower {
+  @apply bg-purple-300/10;
+}
+.plant-card.harvested {
+  @apply bg-red-300/10;
+}
+.plant-card.storage,
+.plant-card.cure {
+  @apply bg-yellow-300/10;
+}
+.plant-card.archived {
+  @apply bg-gray-300/10;
+}
+
+/*
+ * Plant progress bar.
+ */
+
+/* Plant progress bar styles. */
+.plant-progress-bar-item {
+  @apply flex w-full items-center;
+  /* Base styles for line between progress bar items. */
+  @apply after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:inline-block;
+}
+
+/*
+ * Plant progress bar lines.
+ */
+
+/* Line after complete progress bar items. */
+.plant-progress-bar-item-complete {
+  @apply after:border-green-900/80;
+}
+/* Line after current and pending progress bar items. */
+.plant-progress-bar-item-current,
+.plant-progress-bar-item-pending {
+  @apply after:border-zinc-900/30;
+}
+/* Hide line after last progress bar item. */
+.plant-progress-bar-item-pending:last-child {
+  @apply after:border-none shrink w-auto;
+}
+
+/*
+ * Plant progress bar icon.
+ */
+
+/* Base progress bar icon style. */
+.plant-progress-bar-item-icon {
+  @apply flex justify-center items-center p-2.5 w-10 h-10 rounded-full shrink-0 sm:h-12 sm:w-12;
+}
+/* Complete progress bar icon style. */
+.plant-progress-bar-item-pending .plant-progress-bar-item-icon {
+  @apply text-gray-500/20 bg-zinc-900/30;
+}
+/* Current and complete progress bar icon style. */
+.plant-progress-bar-item-complete .plant-progress-bar-item-icon,
+.plant-progress-bar-item-current .plant-progress-bar-item-icon {
+  @apply text-gray-300 bg-green-900/80;
+}
