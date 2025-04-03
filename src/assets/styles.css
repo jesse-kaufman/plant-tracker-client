@@ -77,18 +77,24 @@
   @apply inline-flex justify-center items-center p-4 mr-3 w-16 h-16 text-gray-300 rounded-full shrink-0;
 }
 /* Stage icon background colors. */
+.plant-card.seedling .plant-progress-bar-item-icon,
 .plant-card.seedling .plant-stage-icon {
   @apply bg-blue-900/80;
 }
+.plant-card.veg .plant-progress-bar-item-icon,
 .plant-card.veg .plant-stage-icon {
   @apply bg-green-800/80;
 }
+.plant-card.flower .plant-progress-bar-item-icon,
 .plant-card.flower .plant-stage-icon {
   @apply bg-purple-900/80;
 }
+.plant-card.harvested .plant-progress-bar-item-icon,
 .plant-card.harvested .plant-stage-icon {
   @apply bg-red-900/80;
 }
+.plant-card.storage .plant-progress-bar-item-icon,
+.plant-card.cure .plant-progress-bar-item-icon,
 .plant-card.storage .plant-stage-icon,
 .plant-card.cure .plant-stage-icon {
   @apply bg-yellow-800/80;
@@ -109,9 +115,22 @@
  * Plant progress bar lines.
  */
 
-/* Line after complete progress bar items. */
-.plant-progress-bar-item-complete {
+/* Color for line after complete progress bar items. */
+.plant-card.seedling .plant-progress-bar-item-complete {
+  @apply after:border-blue-900/80;
+}
+.plant-card.veg .plant-progress-bar-item-complete {
   @apply after:border-green-900/80;
+}
+.plant-card.flower .plant-progress-bar-item-complete {
+  @apply after:border-purple-900/80;
+}
+.plant-card.harvested .plant-progress-bar-item-complete {
+  @apply after:border-red-900/80;
+}
+.plant-card.storage .plant-progress-bar-item-complete,
+.plant-card.cure .plant-progress-bar-item-complete {
+  @apply after:border-yellow-800/80;
 }
 /* Line after current and pending progress bar items. */
 .plant-progress-bar-item-current,
@@ -134,10 +153,5 @@
 }
 /* Complete progress bar icon style. */
 .plant-progress-bar-item-pending .plant-progress-bar-item-icon {
-  @apply text-gray-500/20 bg-zinc-900/30;
-}
-/* Current and complete progress bar icon style. */
-.plant-progress-bar-item-complete .plant-progress-bar-item-icon,
-.plant-progress-bar-item-current .plant-progress-bar-item-icon {
-  @apply text-gray-300 bg-green-900/80;
+  @apply text-gray-500/20 bg-zinc-900/30!;
 }
