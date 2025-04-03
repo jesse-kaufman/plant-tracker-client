@@ -17,7 +17,7 @@
       <PlantDetailDateItem
         v-if="dates.flowerStartedOn"
         title="Flower started on"
-        :date="dates.vegStartedOn"
+        :date="dates.flowerStartedOn"
         stage="flower"
         :plant-stage="currentStage"
       />
