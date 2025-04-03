@@ -6,7 +6,7 @@
       :stage-started-on="stageStartedOn"
     />
 
-    <PlantProgressBar :stage="plant.stage" />
+    <PlantProgressBar :current-stage="plant.stage" />
 
     <PlantDetailDates :dates="dates" />
 
