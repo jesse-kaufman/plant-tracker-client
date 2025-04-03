@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+import { computed } from "vue"
 import BaseIcon from "./BaseIcon.vue"
 import BaseTooltip from "./BaseTooltip.vue"
 import { getStageCompleteness } from "@/services/plantServices.js"
@@ -31,5 +32,5 @@ const props = defineProps({
   },
 })
 
-const state = getStageCompleteness(props.currentStage, props.id)
+const state = computed(() => getStageCompleteness(props.id, props.currentStage))
 </script>
