@@ -1,6 +1,6 @@
 <template>
   <div class="mt-7">
-    <dl class="max-w-md text-white divide-y divide-gray-700">
+    <dl class="text-white divide-y divide-gray-700">
       <PlantDetailDateItem
         title="Started on"
         stage="seedling"
