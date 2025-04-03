@@ -15,7 +15,7 @@ import PlantDetailDateItem from "./PlantDetailDateItem.vue"
 
 defineProps({
   dates: {
-    type: Array,
+    type: Object,
     required: true,
   },
 })
