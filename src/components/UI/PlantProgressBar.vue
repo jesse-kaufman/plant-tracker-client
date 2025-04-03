@@ -34,6 +34,7 @@
       id="cure"
       :current-stage="currentStage"
       tooltip="In storage"
+      class="last"
     />
   </ol>
 </template>
