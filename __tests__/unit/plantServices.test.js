@@ -2,9 +2,11 @@
 /** @file Plant service unit tests. */
 import { describe, expect, it } from "vitest"
 import {
-  getStageStartDate,
+  getStageCompleteness,
+  getStageDates,
   getStageDuration,
   getStageName,
+  getStageStartDate,
 } from "@/services/plantServices.js"
 
 const dates = {
@@ -82,6 +84,58 @@ describe("Plant service", () => {
           new Date("2023-02-01")
         )
       ).toBe("Week 5 (31 days) since harvest.")
+    })
+  })
+
+  describe("getStageDates", () => {
+    it("should return the correct dates from the plant object", () => {
+      const stageDates = getStageDates(dates)
+
+      expect(stageDates.startedOn).toEqual(dates.startedOn)
+      expect(stageDates.vegStartedOn).toEqual(dates.vegStartedOn)
+      expect(stageDates.flowerStartedOn).toEqual(dates.flowerStartedOn)
+      expect(stageDates.harvestedOn).toEqual(dates.harvestedOn)
+      expect(stageDates.cureStartedOn).toEqual(dates.cureStartedOn)
+    })
+
+    it("should return null if the plant object has no specific date", () => {
+      const stageDates = getStageDates({
+        ...dates,
+        vegStartedOn: null,
+        flowerStartedOn: null,
+        harvestedOn: null,
+        cureStartedOn: null,
+      })
+
+      expect(stageDates.startedOn).toEqual(dates.startedOn)
+      expect(stageDates.vegStartedOn).toBeNull()
+      expect(stageDates.flowerStartedOn).toBeNull()
+      expect(stageDates.harvestedOn).toBeNull()
+      expect(stageDates.cureStartedOn).toBeNull()
+    })
+  })
+
+  describe("getStageCompleteness", () => {
+    it("returns 'current' when currentStage equals compareStage", () => {
+      expect(getStageCompleteness("veg", "veg")).toBe("current")
+    })
+
+    it("returns 'complete' when compareStage is 'source-seed'", () => {
+      expect(getStageCompleteness("veg", "source-seed")).toBe("complete")
+    })
+
+    it("returns 'complete' when compareStage is 'source-clone'", () => {
+      expect(getStageCompleteness("veg", "source-clone")).toBe("complete")
+    })
+
+    it("returns 'complete' when compareStage is before currentStage", () => {
+      expect(getStageCompleteness("veg", "seedling")).toBe("complete")
+      expect(getStageCompleteness("flower", "veg")).toBe("complete")
+    })
+
+    it("returns 'pending' when compareStage is after currentStage", () => {
+      expect(getStageCompleteness("veg", "flower")).toBe("pending")
+      expect(getStageCompleteness("veg", "harvested")).toBe("pending")
     })
   })
 })
