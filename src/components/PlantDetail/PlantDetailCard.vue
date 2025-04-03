@@ -8,7 +8,7 @@
 
     <PlantProgressBar :current-stage="plant.stage" />
 
-    <PlantDetailDates :dates="dates" />
+    <PlantDetailDates :current-stage="plant.stage" :dates="dates" />
 
     <div class="mt-7">
       <h2 class="mb-1 text-xl font-bold">Notes:</h2>
