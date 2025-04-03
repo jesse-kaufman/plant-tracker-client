@@ -7,7 +7,7 @@
       :time-in-stage="plant.timeInStage"
     />
 
-    <PlantProgressBar />
+    <PlantProgressBar :stage="plant.stage" />
 
     <PlantDetailDates :dates="dates" />
 
