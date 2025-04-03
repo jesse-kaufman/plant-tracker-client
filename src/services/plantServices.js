@@ -2,6 +2,52 @@
 
 import { getWeekNumber, getDaysBetween } from "./dateServices.js"
 
+/** Plant stages in order. */
+const stageOrder = ["seedling", "veg", "flower", "harvested", "cure"]
+
+/**
+ * Returns true if stage1 is before stage2.
+ * @param {string} stage1 - First stage to compare.
+ * @param {string} stage2 - Second stage to compare.
+ * @returns {boolean} True if stage1 is before stage2.
+ */
+const isStageBefore = (stage1, stage2) =>
+  stageOrder.indexOf(stage1) < stageOrder.indexOf(stage2)
+
+/**
+ * Returns true if stage1 is after stage2.
+ * @param {string} stage1 - First stage to compare.
+ * @param {string} stage2 - Second stage to compare.
+ * @returns {boolean} True if stage1 is after stage2.
+ */
+const isStageAfter = (stage1, stage2) =>
+  stageOrder.indexOf(stage1) > stageOrder.indexOf(stage2)
+
+/**
+ * Gets stage completeness: pending, complete, or current.
+ * @param {string} stage - Stage for comparison.
+ * @param {string} currentStage - Current stage of plant for comparison.
+ * @returns {string} Completeness: pending, complete, or current.
+ */
+export const getStageCompleteness = (stage, currentStage) => {
+  console.log(stage, currentStage)
+  if (stage === currentStage) return "current"
+
+  // Stage is complete, based on current stage.
+  if (
+    stage === "source-seed" ||
+    stage === "source-clone" ||
+    isStageBefore(stage, currentStage)
+  ) {
+    return "complete"
+  }
+
+  // Stage is pending, based on current stage.
+  if (isStageAfter(stage, currentStage)) return "pending"
+
+  return "unknown"
+}
+
 /**
  * Translates stage to friendly name.
  * @param {string} stage - Stage to translate.
