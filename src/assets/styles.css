@@ -150,7 +150,7 @@
 .plant-progress-bar-item-icon {
   @apply text-gray-300 flex justify-center items-center p-2.5 w-10 h-10 rounded-full shrink-0 sm:h-12 sm:w-12;
 }
-/* Complete progress bar icon style. */
+/* Pending progress bar icon style. */
 .plant-progress-bar-item-pending .plant-progress-bar-item-icon {
   @apply text-gray-500/20 bg-zinc-900/30!;
 }
