@@ -138,9 +138,8 @@
   @apply after:border-zinc-900/30;
 }
 /* Hide line after last progress bar item. */
-.plant-progress-bar-item-complete:last-child,
-.plant-progress-bar-item-pending:last-child {
-  @apply after:border-none shrink! w-auto;
+.plant-progress-bar-item.last {
+  @apply shrink w-auto after:border-none;
 }
 
 /*
