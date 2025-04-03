@@ -6,46 +6,24 @@ import { getWeekNumber, getDaysBetween } from "./dateServices.js"
 const stageOrder = ["seedling", "veg", "flower", "harvested", "cure"]
 
 /**
- * Returns true if stage1 is before stage2.
- * @param {string} stage1 - First stage to compare.
- * @param {string} stage2 - Second stage to compare.
- * @returns {boolean} True if stage1 is before stage2.
- */
-const isStageBefore = (stage1, stage2) =>
-  stageOrder.indexOf(stage1) < stageOrder.indexOf(stage2)
-
-/**
- * Returns true if stage1 is after stage2.
- * @param {string} stage1 - First stage to compare.
- * @param {string} stage2 - Second stage to compare.
- * @returns {boolean} True if stage1 is after stage2.
- */
-const isStageAfter = (stage1, stage2) =>
-  stageOrder.indexOf(stage1) > stageOrder.indexOf(stage2)
-
-/**
  * Gets stage completeness: pending, complete, or current.
- * @param {string} stage - Stage for comparison.
- * @param {string} currentStage - Current stage of plant for comparison.
+ * @param {string} stage - Stage to retrieve completion level for.
+ * @param {string} plantStage - Current plant stage for comparison.
  * @returns {string} Completeness: pending, complete, or current.
  */
-export const getStageCompleteness = (stage, currentStage) => {
-  console.log(stage, currentStage)
-  if (stage === currentStage) return "current"
+export const getStageCompleteness = (stage, plantStage) => {
+  if (plantStage === stage) return "current"
 
   // Stage is complete, based on current stage.
   if (
-    stage === "source-seed" ||
-    stage === "source-clone" ||
-    isStageBefore(stage, currentStage)
+    plantStage === "source-seed" ||
+    plantStage === "source-clone" ||
+    stageOrder.indexOf(stage) > stageOrder.indexOf(plantStage)
   ) {
     return "complete"
   }
 
-  // Stage is pending, based on current stage.
-  if (isStageAfter(stage, currentStage)) return "pending"
-
-  return "unknown"
+  return "pending"
 }
 
 /**
