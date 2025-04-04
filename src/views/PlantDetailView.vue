@@ -13,7 +13,7 @@ import { useRoute } from "vue-router"
 import PlantDetailCard from "@/components/PlantDetail/PlantDetailCard.vue"
 import PlantTimeline from "@/components/PlantDetail/PlantTimeline.vue"
 import plants from "@/plants.json"
-import { convertStageDates } from "@/services/plantServices"
+import { convertStageDates } from "@/utils/plantUtils"
 
 const route = useRoute()
 

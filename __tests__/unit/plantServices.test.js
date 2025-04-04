@@ -8,9 +8,9 @@ import {
   getStageName,
   getStageStartDate,
   getStageStartTitle,
-} from "@/services/plantServices.js"
+} from "@/utils/plantUtils.js"
 
-import * as plantServices from "@/services/plantServices.js"
+import * as plantServices from "@/utils/plantUtils.js"
 
 const dates = {
   startedOn: new Date("2023-01-01"),

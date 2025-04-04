@@ -21,10 +21,7 @@
 
 <script setup>
 import { computed } from "vue"
-import {
-  getStageCompleteness,
-  getStageStartTitle,
-} from "@/services/plantServices"
+import { getStageCompleteness, getStageStartTitle } from "@/utils/plantUtils"
 
 const props = defineProps({
   date: { type: Date, required: true },

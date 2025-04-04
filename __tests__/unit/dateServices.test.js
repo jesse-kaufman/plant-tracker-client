@@ -3,7 +3,7 @@
 /* eslint-disable max-lines-per-function */
 
 import { describe, expect, it } from "vitest"
-import { getDaysBetween, getWeekNumber } from "../../src/services/dateServices"
+import { getDaysBetween, getWeekNumber } from "../../src/utils/dateUtils"
 
 describe("Date service", () => {
   // Test getDaysBetween() function.

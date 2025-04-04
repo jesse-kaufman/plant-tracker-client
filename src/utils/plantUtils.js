@@ -1,6 +1,6 @@
 /** @file Plant services. */
 
-import { getWeekNumber, getDaysBetween } from "./dateServices.js"
+import { getWeekNumber, getDaysBetween } from "./dateUtils.js"
 
 /** Plant stages in order. */
 const stageOrder = ["seedling", "veg", "flower", "harvested", "cure"]

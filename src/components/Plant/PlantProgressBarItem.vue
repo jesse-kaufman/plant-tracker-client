@@ -13,9 +13,9 @@
 
 <script setup>
 import { computed } from "vue"
-import BaseIcon from "./BaseIcon.vue"
-import BaseTooltip from "./BaseTooltip.vue"
-import { getStageCompleteness } from "@/services/plantServices.js"
+import BaseIcon from "@/components/UI/BaseIcon.vue"
+import BaseTooltip from "@/components/UI/BaseTooltip.vue"
+import { getStageCompleteness } from "@/utils/plantUtils.js"
 
 const props = defineProps({
   id: {

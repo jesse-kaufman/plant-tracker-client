@@ -28,13 +28,13 @@
 </template>
 
 <script setup>
-import PlantCardHeader from "@/components/UI/PlantCardHeader.vue"
+import PlantCardHeader from "@/components/Plant/PlantCardHeader.vue"
 import BaseButton from "@/components/UI/BaseButton.vue"
 import {
   getStageStartDate,
   getStageDates,
   convertStageDates,
-} from "@/services/plantServices.js"
+} from "@/utils/plantUtils.js"
 
 const props = defineProps({
   plant: {

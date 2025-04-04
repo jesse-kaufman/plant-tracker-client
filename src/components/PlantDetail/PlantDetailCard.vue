@@ -20,9 +20,9 @@
 <script setup>
 import { computed, reactive, toRefs } from "vue"
 import PlantDetailDates from "./PlantDetailDates.vue"
-import PlantCardHeader from "@/components/UI/PlantCardHeader.vue"
-import PlantProgressBar from "@/components/UI/PlantProgressBar.vue"
-import { getStageStartDate, getStageDates } from "@/services/plantServices.js"
+import PlantCardHeader from "@/components/Plant/PlantCardHeader.vue"
+import PlantProgressBar from "@/components/Plant/PlantProgressBar.vue"
+import { getStageStartDate, getStageDates } from "@/utils/plantUtils.js"
 
 const props = defineProps({
   plant: {

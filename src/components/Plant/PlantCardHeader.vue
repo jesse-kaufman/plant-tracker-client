@@ -14,8 +14,8 @@
 
 <script setup>
 import { computed } from "vue"
-import BaseIcon from "./BaseIcon.vue"
-import { getStageDuration } from "@/services/plantServices"
+import BaseIcon from "@/components/UI/BaseIcon.vue"
+import { getStageDuration } from "@/utils/plantUtils"
 
 const props = defineProps({
   name: {
