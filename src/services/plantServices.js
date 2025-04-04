@@ -19,6 +19,20 @@ export const getStageDates = (plant) => ({
 })
 
 /**
+ * Converts date string properties on a plant to date objects.
+ * @param {object} plant - Plant object to convert.
+ * @returns {object} Plant object with date strings converted to objects.
+ */
+export const convertStageDates = (plant) => ({
+  ...plant,
+  startedOn: plant.startedOn && new Date(plant.startedOn),
+  vegStartedOn: plant.vegStartedOn && new Date(plant.vegStartedOn),
+  flowerStartedOn: plant.flowerStartedOn && new Date(plant.flowerStartedOn),
+  harvestedOn: plant.harvestedOn && new Date(plant.harvestedOn),
+  cureStartedOn: plant.cureStartedOn && new Date(plant.cureStartedOn),
+})
+
+/**
  * Gets stage completeness: pending, complete, or current.
  * @param {string} stage - Stage to retrieve completion level for.
  * @param {string} plantStage - Current plant stage for comparison.
