@@ -114,7 +114,10 @@
 .plant-stage-icon {
   @apply inline-flex justify-center items-center p-4 mr-3 w-16 h-16 text-gray-300 rounded-full shrink-0;
 }
-/* Stage icon background colors. */
+
+/*
+ * Stage icon background colors.
+ */
 .plant-card.seedling .plant-progress-bar-item-icon,
 .plant-card.seedling .plant-stage-icon {
   @apply bg-blue-900/80;
@@ -154,10 +157,6 @@
   /* Hide line after last progress bar item. */
   @apply last:shrink last:w-auto last:after:border-none;
 }
-
-/*
-* Plant progress bar lines.
-*/
 
 /* Color for line after complete progress bar items. */
 .plant-card.seedling .plant-progress-bar-item-complete {
