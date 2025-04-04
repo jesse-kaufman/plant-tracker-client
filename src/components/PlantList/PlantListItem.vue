@@ -47,8 +47,8 @@ const props = defineProps({
   },
 })
 
+// Set stage to 'archived' if archived, otherwise use plant.stage.
 const stage = props.plant.status === "archived" ? "archived" : props.plant.stage
-
 // Convert date strings to date objects.
 const currentPlant = convertStageDates(props.plant)
 // Extract stage dates from plant.
