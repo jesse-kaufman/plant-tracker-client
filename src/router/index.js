@@ -18,7 +18,7 @@ const routes = [
     component: () => import("@/views/PlantDetailView.vue"),
   },
   // 404 page.
-  { path: "/:pathMatch(.*)*", component: import("@/views/LostView.vue") },
+  { path: "/:pathMatch(.*)*", component: () => import("@/views/LostView.vue") },
 ]
 
 const router = createRouter({
