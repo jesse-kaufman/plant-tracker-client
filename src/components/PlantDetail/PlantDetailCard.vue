@@ -11,7 +11,7 @@
     <PlantDetailDates :current-stage="plant.stage" :dates="dates" />
 
     <div class="mt-7">
-      <h2 class="mb-1 text-xl font-bold">Notes:</h2>
+      <h3 class="mb-1 text-xl font-bold">Notes:</h3>
       <div>{{ plant.notes }}</div>
     </div>
   </div>
