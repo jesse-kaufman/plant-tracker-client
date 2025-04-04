@@ -1,4 +1,6 @@
 <template>
+  <archivedIcon v-if="icon === 'archived'" />
+  <arrowRightIcon v-if="icon === 'arrow-right'" />
   <bellIcon v-if="icon === 'bell'" />
   <flowerIcon v-if="icon === 'flower'" />
   <harvestedIcon v-if="icon === 'harvested'" />
@@ -7,11 +9,10 @@
   <sourceSeedIcon v-if="icon === 'source-seed'" />
   <storageIcon v-if="icon === 'cure' || icon === 'storage'" />
   <vegIcon v-if="icon === 'veg'" />
-  <archivedIcon v-if="icon === 'archived'" />
-  <arrowRightIcon v-if="icon === 'arrow-right'" />
 </template>
 
 <script setup>
+import archivedIcon from "@/assets/icons/archived.svg"
 import arrowRightIcon from "@/assets/icons/arrow-right.svg"
 import bellIcon from "@/assets/icons/bell.svg"
 import flowerIcon from "@/assets/icons/flower.svg"
@@ -21,7 +22,6 @@ import seedlingIcon from "@/assets/icons/seedling.svg"
 import sourceSeedIcon from "@/assets/icons/source-seed.svg"
 import storageIcon from "@/assets/icons/storage.svg"
 import vegIcon from "@/assets/icons/veg.svg"
-import archivedIcon from "@/assets/icons/archived.svg"
 
 defineProps({
   icon: {
