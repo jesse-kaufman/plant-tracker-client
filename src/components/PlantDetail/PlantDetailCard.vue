@@ -1,5 +1,5 @@
 <template>
-  <div :class="`plant-card plant-detail-card ${plant.stage}`">
+  <div :class="['plant-card', 'plant-detail-card', stage]">
     <PlantCardHeader
       :stage="plant.stage"
       :name="plant.name"
@@ -31,6 +31,9 @@ const props = defineProps({
   },
 })
 
+const stage = computed(() =>
+  props.plant.status === "archived" ? "archived" : props.plant.stage
+)
 // Extract stage dates from plant and keep them reactive.
 const dates = reactive(getStageDates(toRefs(props.plant)))
 // Extract current stage start date as computed property.
