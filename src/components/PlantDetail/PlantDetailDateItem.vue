@@ -1,9 +1,12 @@
 <template>
-  <div v-if="show" class="flex flex-col py-3 opacity-30 last:opacity-100">
-    <dt class="text-xs leading-tight text-gray-400 uppercase">
+  <div
+    v-if="show"
+    class="flex flex-col py-3 text-xs opacity-20 first:text-base first:opacity-100"
+  >
+    <dt class="text-[0.7em] leading-tight text-gray-400 uppercase">
       {{ getStageStartTitle(props.stage) }}
     </dt>
-    <dd class="pl-1 text-lg font-semibold">
+    <dd class="pl-1 text-[1.1em] font-semibold">
       {{
         date.toLocaleDateString("en-US", {
           weekday: "long",
