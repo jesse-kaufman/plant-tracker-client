@@ -157,7 +157,39 @@
   {
     "id": 6,
     "status": "archived",
-    "name": "Heirloom tomatoes #5",
+    "name": "Heirloom tomatoes #6",
+    "stage": "cure",
+    "startedOn": "2023-01-01",
+    "vegStartedOn": "2023-01-05",
+    "flowerStartedOn": "2023-01-28",
+    "harvestedOn": "2023-03-31",
+    "cureStartedOn": "2023-04-04",
+    "archivedOn": "2023-05-05",
+    "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "timelineItems": [
+      {
+        "id": 1,
+        "date": "January 1, 2023",
+        "title": "Started from seed"
+      },
+      {
+        "id": 2,
+        "date": "January 1, 2023",
+        "title": "Moved to seedling stage",
+        "details": "Spent 4 days sprouting."
+      },
+      {
+        "id": 3,
+        "date": "January 1, 2023",
+        "title": "Moved to vegetative stage",
+        "details": "Spent 7 days in seedling stage."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "status": "archived",
+    "name": "Snow peas #1",
     "stage": "cure",
     "startedOn": "2023-01-01",
     "vegStartedOn": "2023-01-05",
