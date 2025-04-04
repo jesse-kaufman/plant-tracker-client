@@ -216,6 +216,11 @@
           "date": "January 1, 2023",
           "title": "Moved to vegetative stage",
           "details": "Spent 7 days in seedling stage."
+        },
+        {
+          "id": 3,
+          "date": "January 1, 2023",
+          "title": "Archived plant."
         }
       ]
     }
