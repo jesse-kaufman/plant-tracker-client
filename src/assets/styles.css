@@ -23,30 +23,65 @@
  */
 
 /** Plant card title. */
-.plant-card > h2 {
-  @apply font-bold text-5xl/10 text-white/40 font-stretch-condensed;
+.plant-card h2 {
+  @apply font-bold text-4xl/8 sm:text-5xl/9 text-white/40 font-stretch-condensed;
+}
+.plant-card .stage-duration {
+  @apply mt-1 text-base italic font-semibold leading-tight sm:mt-2 sm:text-lg text-white/70;
+}
+.plant-card.archived .stage-duration {
+  display: none;
+}
+.plant-card-header {
+  @apply flex items-center mb-7;
 }
 
 /*
- * Plant list styles.
- */
+* Plant list styles.
+*/
 
-/** Plant list card title. */
-.plant-list .plant-card > h2 {
-  @apply text-2xl;
+/** Plant list section header. */
+.plant-list-section-header {
+  @apply px-4 py-2 shadow-xl opacity-75 bg-zinc-800;
+}
+.plant-list {
+  @apply flex flex-wrap mt-5;
+}
+/** Plant list card. */
+.plant-list .plant-card {
+  @apply flex flex-col pt-6 pr-7 pb-7 pl-6 h-full rounded-lg shadow-xl;
+}
+/** Plant list card title size override. */
+.plant-list .plant-card h2 {
+  @apply text-2xl/6;
+}
+/** Plant list card stage duration overrides. */
+.plant-list .stage-duration {
+  @apply mt-1.5 text-sm/4;
+}
+/* Plant list card stage icon overrides. */
+.plant-list .plant-stage-icon {
+  @apply p-1.5 mr-3 w-10 h-10;
+}
+.plant-list .plant-card-header {
+  @apply mb-4;
 }
 
 /*
- * Plant detail styles.
- */
+* Plant detail styles.
+*/
 
 /** Plant detail card. */
 .plant-detail-card {
   @apply flex flex-col flex-grow py-9 pr-3 pl-6 w-full rounded-2xl shadow-xl lg:w-2/3 md:pl-8 md:pr-8 md:py-12;
 }
+/** Plant card header. */
+.plant-detail-card .plant-card-header {
+  @apply text-4xl/8 sm:text-5xl/9;
+}
 
 /*
- * Plant card colors.
+* Plant card colors.
  */
 .plant-card.veg {
   @apply bg-green-300/10;
@@ -69,8 +104,8 @@
 }
 
 /*
- * Plant stage icon.
- */
+* Plant stage icon.
+*/
 
 /* Base stage icon styles. */
 .plant-stage-icon {
@@ -99,14 +134,18 @@
 .plant-card.cure .plant-stage-icon {
   @apply bg-yellow-800/80;
 }
+.plant-card.archived .plant-progress-bar-item-icon,
+.plant-card.archived .plant-stage-icon {
+  @apply bg-zinc-900/50;
+}
 
 /*
- * Plant progress bar.
- */
+* Plant progress bar.
+*/
 
 /* Plant progress bar styles. */
 .plant-progress-bar-item {
-  @apply flex w-full items-center;
+  @apply flex items-center w-full;
   /* Base styles for line between progress bar items. */
   @apply after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:inline-block;
   /* Hide line after last progress bar item. */
@@ -114,8 +153,8 @@
 }
 
 /*
- * Plant progress bar lines.
- */
+* Plant progress bar lines.
+*/
 
 /* Color for line after complete progress bar items. */
 .plant-card.seedling .plant-progress-bar-item-complete {
@@ -141,12 +180,12 @@
 }
 
 /*
- * Plant progress bar icon.
- */
+* Plant progress bar icon.
+*/
 
 /* Base progress bar icon style. */
 .plant-progress-bar-item-icon {
-  @apply text-gray-300 flex justify-center items-center p-2.5 w-10 h-10 rounded-full shrink-0 sm:h-12 sm:w-12;
+  @apply flex justify-center items-center p-2.5 w-10 h-10 text-gray-300 rounded-full shrink-0 sm:h-12 sm:w-12;
 }
 /* Pending progress bar icon style. */
 .plant-progress-bar-item-pending .plant-progress-bar-item-icon {
