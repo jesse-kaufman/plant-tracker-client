@@ -8,9 +8,11 @@
   <storageIcon v-if="icon === 'cure' || icon === 'storage'" />
   <vegIcon v-if="icon === 'veg'" />
   <archivedIcon v-if="icon === 'archived'" />
+  <arrowRightIcon v-if="icon === 'arrow-right'" />
 </template>
 
 <script setup>
+import arrowRightIcon from "@/assets/icons/arrow-right.svg"
 import bellIcon from "@/assets/icons/bell.svg"
 import flowerIcon from "@/assets/icons/flower.svg"
 import harvestedIcon from "@/assets/icons/harvested.svg"
