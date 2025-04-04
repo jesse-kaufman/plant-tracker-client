@@ -21,7 +21,7 @@
           }}
         </p>
 
-        <BaseButton href="#">View</BaseButton>
+        <BaseButton :to="`/plants/${plant.id}`">View</BaseButton>
       </div>
     </div>
   </div>
