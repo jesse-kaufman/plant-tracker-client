@@ -27,7 +27,7 @@
   @apply font-bold text-4xl/8 sm:text-5xl/9 text-white/40 font-stretch-condensed;
 }
 .plant-card .stage-duration {
-  @apply mt-1 text-base italic font-semibold leading-tight sm:mt-2 sm:text-lg text-white/70;
+  @apply mt-1 text-base italic leading-tight sm:mt-2 sm:text-lg text-white/70;
 }
 .plant-card.archived .stage-duration {
   display: none;
