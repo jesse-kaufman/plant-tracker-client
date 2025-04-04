@@ -19,19 +19,11 @@ Currently in the building phase. Mockups can be found in the mockup directory.
 ## Progress
 
 - [x] Mockup pages
-- [ ] Create Vue.js components – *in progress*
+- [x] Create Vue.js components – *in progress*
   - [x] Create main layout components
   - [x] Create components for plant view
-    - [x] PlantDetailCard
-      - [x] PlantDetailHeader
-      - [x] PlantDetailDates
-        - [x] PlantDetailDateItem
-      - [x] PlantProgressBar
-        - [x] PlantProgressBarItem
-    - [x] PlantTimeline
-      - [x] PlantTimelineItem
-  - [ ] Create components for plant list
-- [ ] Refactor to use Vue.js router
+  - [x] Create components for plant list
+- [x] Refactor to use Vue.js router
 - [ ] Refactor to use json-server for mock API backend (read-only)
 - [ ] Add ability to
 - [ ] create and make changes to plants via mock API
