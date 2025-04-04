@@ -139,7 +139,7 @@
 }
 .plant-card.archived .plant-progress-bar-item-icon,
 .plant-card.archived .plant-stage-icon {
-  @apply bg-zinc-900/50;
+  @apply bg-zinc-900/40;
 }
 
 /*
@@ -176,6 +176,10 @@
 .plant-card.cure .plant-progress-bar-item-complete {
   @apply after:border-yellow-800/80;
 }
+.plant-card.archived .plant-progress-bar-item-complete {
+  @apply after:border-zinc-900/40;
+}
+
 /* Line after current and pending progress bar items. */
 .plant-progress-bar-item-current,
 .plant-progress-bar-item-pending {
