@@ -18,6 +18,10 @@
   }
 }
 
+.tooltip {
+  @apply absolute left-0 -bottom-7 px-2 py-1 w-max text-gray-300 shadow-lg opacity-0 transition-opacity pointer-events-none bg-gray-700/80 rounded-xs group-hover:opacity-100;
+}
+
 /*
  * Base plant card styles.
  */

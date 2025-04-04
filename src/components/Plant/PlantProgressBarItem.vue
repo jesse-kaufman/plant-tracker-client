@@ -3,11 +3,11 @@
     <div
       :data-tooltip-target="`tooltip-${id}`"
       data-tooltip-placement="bottom"
-      class="plant-progress-bar-item-icon"
+      class="relative plant-progress-bar-item-icon group"
     >
       <BaseIcon :icon="id" />
+      <BaseTooltip :id="id">{{ tooltip }}</BaseTooltip>
     </div>
-    <BaseTooltip :id="id">{{ tooltip }}</BaseTooltip>
   </li>
 </template>
 
