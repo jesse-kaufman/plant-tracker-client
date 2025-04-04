@@ -25,7 +25,6 @@ Currently in the building phase. Mockups can be found in the mockup directory.
   - [x] Create components for plant list
 - [x] Refactor to use Vue.js router
 - [ ] Refactor to use json-server for mock API backend (read-only)
-- [ ] Add ability to
-- [ ] create and make changes to plants via mock API
+- [ ] Add ability to create and make changes to plants via mock API
 - [ ] Build Docker container for easy deployment of client + server
 - [ ] Setup CI/CD for Docker container
