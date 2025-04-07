@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: . # Set the build context to the root of the project
+      dockerfile: docker/Dockerfile # Path to your Dockerfile
+    image: node:23
+    container_name: plant-frontend
+    working_dir: /app
+    networks:
+      - proxy
+    volumes:
+      - ./src/db.json:/app/db.json
+    ports:
+      - "8080:8080" # Port for Vue.js frontend
+      #- "3000:3000" # Port for json-server API
+    environment:
+      - JSON_SERVER_HOST=0.0.0.0
+
+networks:
+  proxy:
