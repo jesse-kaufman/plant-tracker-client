@@ -8,7 +8,7 @@
     "dev:vite": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "dev:json-server": "json-server --watch src/db.json --port 3001"
+    "dev:json-server": "json-server src/db.json --port 3001"
   },
   "dependencies": {
     "eslint-plugin-import": "^2.31.0",
