@@ -26,4 +26,11 @@ const router = createRouter({
   routes,
 })
 
+// Track pageviews on each route change
+router.afterEach(() => {
+  if (window.plausible) {
+    window.plausible("pageview")
+  }
+})
+
 export default router
