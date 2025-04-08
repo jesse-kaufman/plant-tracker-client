@@ -93,6 +93,9 @@
 /*
 * Plant card colors.
  */
+.plant-card {
+  @apply bg-gray-500/10;
+}
 .plant-card.veg {
   @apply bg-green-300/10;
 }
