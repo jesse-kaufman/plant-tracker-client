@@ -1,20 +1,39 @@
 services:
-  frontend:
+  plants-demo:
     build:
-      context: . # Set the build context to the root of the project
-      dockerfile: docker/Dockerfile # Path to your Dockerfile
+      context: .
+      dockerfile: docker/Dockerfile
     image: node:23
-    container_name: plant-frontend
+    container_name: plants-demo
     working_dir: /app
     networks:
       - proxy
     volumes:
       - ./src/db.json:/app/db.json
-    ports:
-      - "8080:8080" # Port for Vue.js frontend
-      #- "3000:3000" # Port for json-server API
     environment:
       - JSON_SERVER_HOST=0.0.0.0
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+
+      # Frontend
+      - traefik.http.routers.plants-frontend.rule=Host(`plants-demo.lloydnet.org`) && PathPrefix(`/`)
+      - traefik.http.routers.plants-frontend.entrypoints=https
+      - traefik.http.routers.plants-frontend.tls=true
+      - traefik.http.services.plants-frontend.loadbalancer.server.port=8080
+      - traefik.http.routers.plants-frontend.service=plants-frontend
+
+      # API
+      - traefik.http.routers.plants-api.rule=Host(`plants-demo.lloydnet.org`) && PathPrefix(`/api`)
+      - traefik.http.routers.plants-api.entrypoints=https
+      - traefik.http.routers.plants-api.tls=true
+      - traefik.http.services.plants-api.loadbalancer.server.port=3000
+      - traefik.http.routers.plants-api.service=plants-api
+
+      # Strip /api from path
+      - traefik.http.routers.plants-api.middlewares=strip-api
+      - traefik.http.middlewares.strip-api.stripprefix.prefixes=/api
 
 networks:
   proxy:
+    external: true
