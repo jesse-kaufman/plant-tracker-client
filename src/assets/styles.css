@@ -31,10 +31,10 @@
 
 /** Plant card title. */
 .plant-card h2 {
-  @apply font-bold text-4xl/8 sm:text-5xl/9 text-white/40 font-stretch-condensed;
+  @apply font-bold text-2xl/8 sm:text-4xl/6 md:text-5xl/9 text-white/40 font-stretch-condensed;
 }
 .plant-card .stage-duration {
-  @apply mt-1 text-base italic leading-tight sm:mt-2 sm:text-lg text-white/70;
+  @apply text-sm italic leading-tight sm:mt-2 sm:text-lg text-white/70;
 }
 .plant-card.archived .stage-duration {
   display: none;
@@ -119,7 +119,7 @@
 
 /* Base stage icon styles. */
 .plant-stage-icon {
-  @apply inline-flex justify-center items-center p-4 mr-3 w-16 h-16 text-gray-300 rounded-full shrink-0;
+  @apply inline-flex justify-center items-center p-2 md:p-3 mr-3 w-12 h-12 md:w-16 md:h-16 text-gray-300 rounded-full grow-0 shrink-0;
 }
 
 /*
@@ -198,7 +198,7 @@
 
 /* Base progress bar icon style. */
 .plant-progress-bar-item-icon {
-  @apply flex justify-center items-center p-2.5 w-10 h-10 text-gray-300 rounded-full shrink-0 sm:h-12 sm:w-12;
+  @apply flex justify-center items-center p-1 w-7 h-7 sm:p-2.5 sm:w-10 sm:h-10 text-gray-300 rounded-full shrink-0 md:h-12 md:w-12;
 }
 /* Pending progress bar icon style. */
 .plant-progress-bar-item-pending .plant-progress-bar-item-icon {
