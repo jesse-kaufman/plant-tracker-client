@@ -1,5 +1,4 @@
 /** @file Plant services. */
-import plants from "@/plants.json"
 import { convertStageDates } from "@/utils/plantUtils"
 
 /**
@@ -28,7 +27,20 @@ export const fetchPlants = async (status = "active") => {
  * @param {string} id - ID of plant to fetch.
  * @returns {object} Plant object.
  */
-export const fetchPlant = (id) => {
-  const plantData = plants.find((item) => item.id.toString() === id)
-  return convertStageDates(plantData)
+export const fetchPlant = async (id) => {
+  try {
+    console.log(`fetching plantId: ${id}`)
+    const response = await fetch(`/api/plants/${id}`)
+
+    if (!response.ok) {
+      throw new Error("Plant not found")
+    }
+
+    const plantData = await response.json()
+    console.log(plantData)
+    return convertStageDates(plantData)
+  } catch (error) {
+    console.error("Error fetching plant:", error)
+    throw error
+  }
 }

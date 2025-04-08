@@ -1,5 +1,5 @@
 <template>
-  <PlantListSection title="Active plants">
+  <PlantListSection v-if="activePlants" title="Active plants">
     <PlantListItem
       v-for="plant in activePlants"
       :key="plant.id"
@@ -7,7 +7,7 @@
     />
   </PlantListSection>
 
-  <PlantListSection title="Archived plants">
+  <PlantListSection v-if="archivedPlants" title="Archived plants">
     <PlantListItem
       v-for="plant in archivedPlants"
       :key="plant.id"
@@ -18,16 +18,34 @@
 </template>
 
 <script setup>
-import { computed, reactive } from "vue"
+import { computed, onMounted, ref } from "vue"
 import PlantListSection from "@/components/PlantList/PlantListSection.vue"
 import PlantListItem from "@/components/PlantList/PlantListItem.vue"
-import plantData from "@/plants.json"
+import { fetchPlants } from "@/services/plantService"
 
-const plants = reactive(plantData)
-const activePlants = computed(() =>
-  plants.filter((plant) => plant.status === "active")
+const plants = ref(null)
+const error = ref(null)
+
+const activePlants = computed(
+  () =>
+    plants.value && plants.value.filter((plant) => plant.status === "active")
 )
-const archivedPlants = computed(() =>
-  plants.filter((plant) => plant.status === "archived")
+const archivedPlants = computed(
+  () =>
+    plants.value && plants.value.filter((plant) => plant.status === "archived")
 )
+
+onMounted(async () => {
+  // Get plant matching id in /plant/:id route.
+  try {
+    console.log("trying")
+    plants.value = await fetchPlants() // Fetch plant data using the provided ID
+
+    console.log("plant", plants.value)
+  } catch (err) {
+    console.error(err)
+    error.value = `Failed to fetch plant data: ${err.message}` // Handle error
+    console.error(error)
+  }
+})
 </script>
