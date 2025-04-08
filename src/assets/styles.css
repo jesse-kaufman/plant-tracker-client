@@ -83,7 +83,7 @@
 
 /** Plant detail card. */
 .plant-detail-card {
-  @apply flex flex-col flex-grow py-9 pr-3 pl-6 w-full rounded-2xl shadow-xl lg:w-2/3 md:pl-8 md:pr-8 md:py-12;
+  @apply flex flex-col flex-grow py-5 pr-4 pl-4 rounded-2xl shadow-xl lg:w-2/3 md:pl-8 md:pr-8 md:py-12;
 }
 /** Plant card header. */
 .plant-detail-card .plant-card-header {
