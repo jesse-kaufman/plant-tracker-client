@@ -15,11 +15,11 @@ COPY . .
 RUN npm run build
 
 # Install json-server and http-server to serve the frontend
-RUN npm install -g json-server http-server
+RUN npm install -g json-server serve
 
 # Expose the ports
 EXPOSE 8080
 EXPOSE 3000
 
 # Serve the static files and start json-server
-CMD http-server /app/dist --port 8080 & json-server --watch db.json --port 3000
+CMD ["sh", "-c", "serve -s dist -p 8080 & json-server --watch db.json --port 3000"]
